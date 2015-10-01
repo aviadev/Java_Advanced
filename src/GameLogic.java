@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Created by aviad on 23/09/2015 Maman11 Maman11.
+ * Created by aviad on 23/09/2015 Maman11
  */
 class Guess {
     ArrayList<Guess> guessList = new ArrayList<>();
