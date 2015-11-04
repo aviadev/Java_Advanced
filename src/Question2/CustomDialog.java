@@ -8,7 +8,7 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 
 /* 1.4 example used by DialogDemo.java. */
-class CustomDialog extends JDialog
+public class CustomDialog extends JDialog
 
 {
 
