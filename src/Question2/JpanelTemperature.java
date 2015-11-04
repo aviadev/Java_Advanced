@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * Created by aviad on 04/11/2015.
  */
-public class JPanelTemperatureeeeeeee extends JPanel
+public class JpanelTemperature extends JPanel
 {
 
 public void paintComponent(Graphics g)

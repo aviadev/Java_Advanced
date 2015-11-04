@@ -12,7 +12,7 @@ public static void main(String[] args)
 		JFrame jFrame = new JFrame("Temperatures Graphs");
 		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		jFrame.setSize(500, 500);
-		JPanelTemperatureeeeeeee jpanelTemperature = new JPanelTemperatureeeeeeee();
+		JpanelTemperature jpanelTemperature = new JpanelTemperature();
 		jFrame.add(jpanelTemperature);
 		jFrame.setVisible(true);
 		CustomDialog customDialog = new CustomDialog(jFrame, "CustomDialog");
