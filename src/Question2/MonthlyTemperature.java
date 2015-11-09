@@ -5,32 +5,12 @@ package Question2;
 public class MonthlyTemperature
 {
 
-protected double _degree;
+protected int _degree;
 protected int _month;
 
-public MonthlyTemperature(double degree)
-	{
-		_degree = degree;
-	}
-
-public MonthlyTemperature(int month, double degree)
+public MonthlyTemperature(int month, int degree)
 	{
 		_month = month;
 		_degree = degree;
-	}
-
-protected double getDegree()
-	{
-		return _degree;
-	}
-
-protected int getMonth()
-	{
-		return _month;
-	}
-
-public double compare(MonthlyTemperature mt1, MonthlyTemperature mt2)
-	{
-		return Double.compare(mt1.getDegree(), mt2.getDegree());
 	}
 }

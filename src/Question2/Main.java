@@ -1,5 +1,6 @@
 package Question2;
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by aviad on 04/11/2015.
@@ -7,32 +8,50 @@ import javax.swing.*;
 public class Main
 {
 
+protected static Data _data = new Data();
+
 public static void main(String[] args)
 	{
-		JFrame jFrame = new JFrame("Temperatures Graphs");
-		jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		jFrame.setSize(500, 500);
-		//Graphics g = null;
-		//TemperatureList temperatureList = new TemperatureList();
+		ShowUserDialog();
+		GraphPanel mainPanel = new GraphPanel(_data);
 
-		//String test1= JOptionPane.showInputDialog("Please input mark for test 1: ");
-		//temperatureList.getHighestMonthlyTemperature();
-		JpanelTemperature jpanelTemperature = new JpanelTemperature();
-		//InputDialog inputDialog = new InputDialog();
-		jFrame.add(jpanelTemperature);
+		mainPanel.setPreferredSize(new Dimension(800, 600));
 
-		//jpanelTemperature.paintComponent();
-		jpanelTemperature.showDialog();
-		jFrame.add(new Rectangle(100, 150, 10, 20));
-		jFrame.setVisible(true);
-		//		jpanelTemperature.paintComponent(g);
+		JFrame frame = new JFrame("Temperatures Graphs");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(mainPanel);
 
-		//CustomDialog customDialog = new CustomDialog(jFrame, "CustomDialog");
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+	}
 
-		//customDialog.setSize(100, 100);
-		//customDialog.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		//customDialog.setVisible(true);
-		//jFrame.add(customDialog);
+protected static void ShowUserDialog()
+	{
+		final JPanel panel = new JPanel();
+		String year = JOptionPane.showInputDialog("Please input the year:");
+		_data.setYear(year);
+		for (int i = 1; i < 13; i++)
+			{
+			String input = JOptionPane.showInputDialog("Please input degrees for month " + i + ":");
+			while (!isValidInput(input))
+				{
+				JOptionPane.showMessageDialog(panel, "Invalid Input", "Error", JOptionPane.ERROR_MESSAGE);
+				input = JOptionPane.showInputDialog("Please input degrees for month " + i + ":");
+				}
+			_data.addToList(new MonthlyTemperature((i), Integer.parseInt(input)));
+			}
+	}
+
+private static boolean isValidInput(String input)
+	{
+		if (input.length() == 0 || input.contains(" ") || input.isEmpty()) return false;
+		String validChars = "0123456789";
+		for (int i = 0; i < input.length(); i++)
+			{
+			if (!validChars.contains(input.substring(i, i + 1))) return false;
+			}
+		return true;
 
 	}
 }
