@@ -15,7 +15,7 @@ public static void main(String[] args)
 		ShowUserDialog();
 		GraphPanel mainPanel = new GraphPanel(_data);
 
-		mainPanel.setPreferredSize(new Dimension(800, 600));
+		mainPanel.setPreferredSize(new Dimension(800, 800));
 
 		JFrame frame = new JFrame("Temperatures Graphs");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
